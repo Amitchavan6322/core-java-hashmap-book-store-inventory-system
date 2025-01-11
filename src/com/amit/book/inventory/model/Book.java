@@ -1,43 +1,33 @@
 package com.amit.book.inventory.model;
 
 public class Book {
-    private int bookID;
-    private String Name;
+    private String name;
     private String author;
     private String publisher;
     private int noOfCopies;
-    private String category;
+    private BookCategory category; // Use BookCategory enum instead of String
     private String storeLocation;
     private int price;
 
     @Override
     public String toString() {
         return "Book{" +
-                "bookID=" + bookID +
-                ", Name='" + Name + '\'' +
+                "Name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", noOfCopies=" + noOfCopies +
-                ", category='" + category + '\'' +
+                ", category=" + category + // Display the enum value
                 ", storeLocation='" + storeLocation + '\'' +
                 ", price=" + price +
                 '}';
     }
 
-    public int getBookID() {
-        return bookID;
-    }
-
-    public void setBookID(int bookID) {
-        this.bookID = bookID;
-    }
-
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getAuthor() {
@@ -64,11 +54,11 @@ public class Book {
         this.noOfCopies = noOfCopies;
     }
 
-    public String getCategory() {
+    public BookCategory getCategory() { // Updated getter for BookCategory
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(BookCategory category) { // Updated setter for BookCategory
         this.category = category;
     }
 

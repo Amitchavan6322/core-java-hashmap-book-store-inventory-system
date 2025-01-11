@@ -2,7 +2,7 @@ package com.amit.book.inventory.model;
 
 public class Supplier {
 
-    private int supplierID;
+    //private int supplierID;
     private String supplierName;
     private String supplierAddress;
     private Long supplierContact;
@@ -11,21 +11,21 @@ public class Supplier {
     @Override
     public String toString() {
         return "Supplier{" +
-                "supplierID=" + supplierID +
-                ", supplierName='" + supplierName + '\'' +
+                //"supplierID=" + supplierID +
+                "supplierName='" + supplierName + '\'' +
                 ", supplierAddress='" + supplierAddress + '\'' +
                 ", supplierContact=" + supplierContact +
                 ", supplierEmailId='" + supplierEmailId + '\'' +
                 '}';
     }
 
-    public int getSupplierID() {
+    /*public int getSupplierID() {
         return supplierID;
     }
 
     public void setSupplierID(int supplierID) {
         this.supplierID = supplierID;
-    }
+    }*/
 
     public String getSupplierName() {
         return supplierName;

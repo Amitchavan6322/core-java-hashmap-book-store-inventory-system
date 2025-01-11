@@ -19,7 +19,7 @@ public class SupplierService {
 
         System.out.println("Enter supplier id");
         int supplierId = Integer.parseInt(scanner.nextLine());
-        supplier.setSupplierID(supplierId);
+        //supplier.setSupplierID(supplierId);
 
         System.out.println("Enter supplier name");
         String name = scanner.nextLine();

@@ -2,7 +2,7 @@ package com.amit.book.inventory.model;
 
 public class Customer {
 
-    private int customerID;
+    //private int customerID;
     private String customerName;
     private String customerAddress;
     private Long customerContact;
@@ -11,21 +11,21 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "customerID=" + customerID +
-                ", customerName='" + customerName + '\'' +
+                //"customerID=" + customerID +
+                "customerName='" + customerName + '\'' +
                 ", customerAddress='" + customerAddress + '\'' +
                 ", customerContact=" + customerContact +
                 ", emailID='" + customerEmailID + '\'' +
                 '}';
     }
 
-    public int getCustomerID() {
+    /*public int getCustomerID() {
         return customerID;
     }
 
     public void setCustomerID(int customerID) {
         this.customerID = customerID;
-    }
+    }*/
 
     public String getCustomerName() {
         return customerName;

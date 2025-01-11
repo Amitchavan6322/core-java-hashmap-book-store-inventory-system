@@ -20,7 +20,7 @@ public class CustomerService {
 
         System.out.println("Enter customer id");
         int customerId = Integer.parseInt(scanner.nextLine());
-        customer.setCustomerID(customerId);
+        //customer.setCustomerID(customerId);
 
         System.out.println("Enter customer name");
         String name = scanner.nextLine();
