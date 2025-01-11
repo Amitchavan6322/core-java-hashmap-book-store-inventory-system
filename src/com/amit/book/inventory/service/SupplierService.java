@@ -1,13 +1,16 @@
 package com.amit.book.inventory.service;
 
+import com.amit.book.inventory.model.Customer;
 import com.amit.book.inventory.model.Supplier;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Scanner;
 
 public class SupplierService {
 
-    private HashSet<Supplier> suppliers = new HashSet<>();
+    private HashMap<Integer, Supplier> suppliers = new HashMap<>();
     private Scanner scanner = new Scanner(System.in);
 
     public void acceptingSupplierInfo(){
@@ -34,12 +37,14 @@ public class SupplierService {
         String emailID = scanner.nextLine();
         supplier.setSupplierEmailId(emailID);
 
-        suppliers.add(supplier);
+        suppliers.put(supplierId, supplier);
     }
 
     public void displaySupplierInfo(){
-        for (Supplier supplier : suppliers){
-            System.out.println("Supplier Info : " +supplier);
+
+        for(Map.Entry<Integer, Supplier>set : suppliers.entrySet()){
+            System.out.println("Supplier ID : " +set.getKey() + " = " + "Supplier Info : "
+                    + set.getValue());
         }
     }
 

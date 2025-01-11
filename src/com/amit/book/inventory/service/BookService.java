@@ -3,12 +3,14 @@ package com.amit.book.inventory.service;
 
 import com.amit.book.inventory.model.Book;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BookService {
 
-    private HashSet<Book> books = new HashSet<>();
+    private HashMap<Integer, Book> books = new HashMap();
     private Scanner scanner = new Scanner(System.in);
 
     public void acceptingBookInfo(){
@@ -47,12 +49,13 @@ public class BookService {
         int price = Integer.parseInt(scanner.nextLine());
         book.setNoOfCopies(noOfCopies);
 
-        books.add(book);
+        books.put(bookId, book);
     }
 
     public void displayBookInfo(){
-        for(Book book : books){
-            System.out.println("Book Info : " +book);
+        for(Map.Entry<Integer, Book>set : books.entrySet()){
+            System.out.println("Book ID : " +set.getKey() + " = " + "Book Info : "
+                    + set.getValue());
         }
     }
 }

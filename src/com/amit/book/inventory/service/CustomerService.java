@@ -1,13 +1,16 @@
 package com.amit.book.inventory.service;
 
+import com.amit.book.inventory.model.Book;
 import com.amit.book.inventory.model.Customer;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CustomerService {
 
-    private HashSet<Customer> customers = new HashSet<>();
+    private HashMap<Integer, Customer> customers = new HashMap<>();
     private Scanner scanner = new Scanner(System.in);
 
 
@@ -35,12 +38,13 @@ public class CustomerService {
         String emailID = scanner.nextLine();
         customer.setEmailID(emailID);
 
-        customers.add(customer);
+        customers.put(customerId, customer);
     }
 
     public void displayCustomerInfo(){
-        for (Customer customer : customers){
-            System.out.println("Customer Info : " +customer);
+        for(Map.Entry<Integer, Customer>set : customers.entrySet()){
+            System.out.println("Customer ID : " +set.getKey() + " = " + "Customer Info : "
+                    + set.getValue());
         }
     }
 }
