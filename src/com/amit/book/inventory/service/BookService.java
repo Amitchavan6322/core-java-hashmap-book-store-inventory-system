@@ -62,4 +62,48 @@ public class BookService {
             System.out.println("Book ID: " + set.getKey() + " = Book Info: " + set.getValue());
         }
     }
+
+    // method to retrieve book by id
+    public Book getBookById(int bookId) {
+        if (books.containsKey(bookId)) {
+            return books.get(bookId);
+        } else {
+            System.out.println("Book ID " + bookId + " not found.");
+            return null;
+        }
+    }
+
+    // Method to remove a book by ID
+    public void removeBookById(int bookId) {
+        if (books.containsKey(bookId)) {
+            books.remove(bookId);
+            System.out.println("Book ID " + bookId + " removed.");
+        } else {
+            System.out.println("Book ID " + bookId + " not found.");
+        }
+    }
+
+    // Method to update a book's price
+    public void updateBookPrice(int bookId, int newPrice) {
+        if (books.containsKey(bookId)) {
+            Book book = books.get(bookId);
+            book.setPrice(newPrice);
+            books.put(bookId, book); // Update the map with the new price
+            System.out.println("Book ID " + bookId + " updated with new price.");
+        } else {
+            System.out.println("Book ID " + bookId + " not found.");
+        }
+    }
+
+    // Method to check if the collection is empty
+    public boolean isBookCollectionEmpty() {
+        return books.isEmpty();
+    }
+
+    // Method to clear the book collection
+    public void clearBookCollection() {
+        books.clear();
+        System.out.println("All books have been removed.");
+    }
 }
+
