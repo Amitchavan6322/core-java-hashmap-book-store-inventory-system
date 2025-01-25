@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/core-java-hashmap-book-store-inventory-system.iml" filepath="$PROJECT_DIR$/core-java-hashmap-book-store-inventory-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core-java-hashmap-book-store-inventory-systems.iml" filepath="$PROJECT_DIR$/core-java-hashmap-book-store-inventory-systems.iml" />
     </modules>
   </component>
 </project>
