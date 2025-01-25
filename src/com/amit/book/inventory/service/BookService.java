@@ -2,7 +2,7 @@ package com.amit.book.inventory.service;
 
 import com.amit.book.inventory.model.Book;
 import com.amit.book.inventory.model.BookCategory;
-import com.amit.book.inventory.model.InvalidInputException;
+import com.amit.book.inventory.model.exception.InvalidInputException;
 
 import java.util.HashMap;
 import java.util.Map;

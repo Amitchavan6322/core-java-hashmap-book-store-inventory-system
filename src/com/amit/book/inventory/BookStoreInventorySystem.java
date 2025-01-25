@@ -1,6 +1,6 @@
 package com.amit.book.inventory;
 
-import com.amit.book.inventory.model.InvalidInputException;
+import com.amit.book.inventory.model.exception.InvalidInputException;
 import com.amit.book.inventory.service.BookService;
 import com.amit.book.inventory.service.CustomerService;
 import com.amit.book.inventory.service.SupplierService;
