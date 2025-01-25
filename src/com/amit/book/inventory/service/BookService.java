@@ -2,6 +2,7 @@ package com.amit.book.inventory.service;
 
 import com.amit.book.inventory.model.Book;
 import com.amit.book.inventory.model.BookCategory;
+import com.amit.book.inventory.model.InvalidInputException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,16 +13,26 @@ public class BookService {
     private HashMap<Integer, Book> books = new HashMap<>();
     private Scanner scanner = new Scanner(System.in);
 
-    public void acceptingBookInfo() {
+    public void acceptingBookInfo() throws InvalidInputException {
         Book book = new Book();
-
         System.out.println("Enter book id");
-        int bookId = Integer.parseInt(scanner.nextLine());
-        // book.setBookID(bookId);
+        int bookId;
+        try {
+            bookId = Integer.parseInt(scanner.nextLine());
+            // book.setBookID(bookId);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input, please provide a valid numeric ID.");
+            return;
+        }
 
         System.out.println("Enter book Name");
         String name = scanner.nextLine();
+
+        if (name.isEmpty()) {
+            throw new InvalidInputException("Invalid input please provide valid name");
+        }
         book.setName(name);
+
 
         System.out.println("Enter book Author");
         String author = scanner.nextLine();
