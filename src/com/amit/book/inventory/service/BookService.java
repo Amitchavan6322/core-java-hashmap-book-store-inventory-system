@@ -29,7 +29,7 @@ public class BookService {
         String name = scanner.nextLine();
 
         if (name.isEmpty()) {
-            throw new InvalidInputException("Invalid input please provide valid name");
+            throw new InvalidInputException("Invalid input please provide valid book name");
         }
         book.setName(name);
 
