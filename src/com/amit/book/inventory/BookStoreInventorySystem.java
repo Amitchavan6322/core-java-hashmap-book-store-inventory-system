@@ -1,6 +1,7 @@
 package com.amit.book.inventory;
 
-import com.amit.book.inventory.model.exception.InvalidInputException;
+import com.amit.book.inventory.model.exception.InvalidBookIDException;
+import com.amit.book.inventory.model.exception.InvalidBookNameException;
 import com.amit.book.inventory.service.BookService;
 import com.amit.book.inventory.service.CustomerService;
 import com.amit.book.inventory.service.SupplierService;
@@ -11,7 +12,7 @@ public class BookStoreInventorySystem {
 
     static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) throws InvalidInputException {
+    public static void main(String[] args) throws InvalidBookIDException {
         BookService bookService = new BookService();
         CustomerService customerService = new CustomerService();
         SupplierService supplierService = new SupplierService();
@@ -34,8 +35,8 @@ public class BookStoreInventorySystem {
                    try {
                        bookService.acceptingBookInfo();
                        break;
-                   } catch (InvalidInputException invalidMarkException) {
-                       System.err.println(invalidMarkException.getMessage());
+                   } catch (InvalidBookIDException | InvalidBookNameException invalidBookIDException) {
+                       System.err.println(invalidBookIDException.getMessage());
                    }
 
                case 2:
